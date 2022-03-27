@@ -1,0 +1,114 @@
+@font-face {
+    font-family: font-titolo;
+    src: url(fonts/Product\ Sans\ Bold.ttf);
+}
+
+@font-face {
+    font-family: font-testo;
+    src: url(fonts/Product\ Sans\ Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: block;
+}
+
+nav {
+    background-color: #E1F5FE;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: font-testo;
+    color: #424242;
+    font-size: 50px;
+}
+
+.card-holder {
+    background-color: coral;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10 px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.card {
+    background-color: deeppink;
+    height: 250px;
+    width: auto;
+    border: 3px solid #73AD21;
+}
+
+.card-title {
+    background-color: dodgerblue;
+    font-family: font-testo;
+    color: #424242;
+    font-size: 30px;
+    padding: 0 10px;
+}
