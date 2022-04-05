@@ -13,12 +13,12 @@
 }
 
 .row::after {
-    content: "";
+    content: ;
     clear: both;
     display: table;
 }
 
-[class*="col-"] {
+[class*:col-] {
     float: left;
 }
 
@@ -118,40 +118,27 @@ nav {
 
 /*              IN TEST             */
 
-.quiz-chartTip {
-    padding: 5px 10px;
-    border: 1px solid rgba(0, 0, 0, .1);
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, .9);
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, .1);
-    position: absolute;
-    z-index: 50;
-    max-width: 250px;
-}
-
-.quiz-graph {
-    padding: 10px;
-    height: 370px;
+.graph {
+    height: 100%;
     width: 100%;
 }
 
-.quiz-graph .x-labels {
-    text-anchor: middle;
-}
-
-.quiz-graph .y-labels {
+.graph .y-labels {
     text-anchor: end;
 }
 
-.quiz-graph .quiz-graph-grid {
-    stroke: #ccc;
-    stroke-dasharray: 0;
-    stroke-width: 1;
+.graph-container {
+    padding: 10px;
+    height: 200px;
+    width: 400px;
 }
 
-.label-title {
-    text-anchor: middle;
-    text-transform: uppercase;
-    font-size: 12px;
-    fill: gray;
+.graph-axis {
+    x: 50;
+    y: -1;
+    width: calc(100% - 49px);
+    height: 100%;
+    fill: none;
+    stroke: black;
+    stroke-opacity: 0.9;
 }

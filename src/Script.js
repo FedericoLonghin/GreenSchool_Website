@@ -8,6 +8,12 @@ fetch('http://' + ip + '/CO2_data.txt ').then(function(response) {
 });
 
 function done() {
+    var arr = data.split(",");
+    console.log(arr.lenght);
+    data = "";
+    for (var i = 0; i < 100; i++) {
+        data += i * 10 + 45 + "," + (200 - arr[i] * 2) + ",";
+    }
     var polyline = document.getElementById('card-1-data')
 
     polyline.setAttribute("points", data);
