@@ -1,5 +1,13 @@
 var data;
+const cardTitles = ["Percentuale CO2", "Temperatura T1", "Umidità T1"];
+const cardURL = ["/CO2_current", "/Temp1_current", "/Temp1_current"];
+const cardNumber = 3;
 
+function fetchData() {
+    for (let i = 0; i < cardNumber; i++) {
+        scarica(i);
+    }
+}
 
 function IPAlert() {
 
@@ -9,18 +17,20 @@ function IPAlert() {
     } else {
 
         ip = "src/test"; //for test purpose
+
     }
 }
 
 
 
-function scarica() {
-    var url = ip + "/CO2_current";
+function scarica(cardToFetch) {
+    var url = ip + cardURL[cardToFetch];
     $.ajax({
         url: url,
         success: function(result) {
-            document.getElementById('tutto').innerHTML = result;
-            setTimeout(scarica, 400)
+            var cardid = "card-" + cardToFetch + "-body";
+            document.getElementById(cardid).innerHTML = result;
+            setTimeout(fetchData, 10)
         }
     });
 
