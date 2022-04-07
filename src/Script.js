@@ -1,9 +1,21 @@
-var ip = "src/test";
 var data;
 
 
+function IPAlert() {
+
+    ip = prompt("Please enter your device's IP:", "");
+    if (ip != null && ip != "") {
+        ip = "http://" + ip;
+    } else {
+
+        ip = "src/test"; //for test purpose
+    }
+}
+
+
+
 function scarica() {
-    var url = ip + "/CO2_current.txt";
+    var url = ip + "/CO2_current";
     $.ajax({
         url: url,
         success: function(result) {
