@@ -1,5 +1,23 @@
-var ip = "127.0.0.1:5500/src/test";
+var ip = "src/test";
 var data;
+
+
+function scarica() {
+    var url = ip + "/CO2_current.txt";
+    $.ajax({
+        url: url,
+        success: function(result) {
+            document.getElementById('tutto').innerHTML = result;
+            setTimeout(scarica, 400)
+        }
+    });
+
+}
+
+
+
+
+/*
 fetch('http://' + ip + '/CO2_data.txt ').then(function(response) {
     response.text().then(function(text) {
         data = text;
@@ -19,4 +37,4 @@ function done() {
     polyline.setAttribute("points", data);
     data = polyline.getAttribute('points');
     console.log(data);
-}
+}*/
