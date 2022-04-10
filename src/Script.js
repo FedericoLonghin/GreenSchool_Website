@@ -2,11 +2,13 @@ var data;
 const cardTitles = ["Percentuale CO2", "Temperatura T1", "Umidità T1"];
 const cardURL = ["/CO2_current", "/Temp1_current", "/Temp1_current"];
 const cardNumber = 3;
+const fetchTime = 50;
 
 function fetchData() {
     for (let i = 0; i < cardNumber; i++) {
         scarica(i);
     }
+    setTimeout(fetchData, fetchTime)
 }
 
 function IPAlert() {
@@ -22,7 +24,6 @@ function IPAlert() {
 }
 
 
-
 function scarica(cardToFetch) {
     var url = ip + cardURL[cardToFetch];
     $.ajax({
@@ -30,7 +31,6 @@ function scarica(cardToFetch) {
         success: function(result) {
             var cardid = "card-" + cardToFetch + "-body";
             document.getElementById(cardid).innerHTML = result;
-            setTimeout(fetchData, 10)
         }
     });
 
