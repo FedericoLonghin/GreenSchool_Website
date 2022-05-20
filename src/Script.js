@@ -1,8 +1,9 @@
 var data;
-const cardTitles = ["Percentuale CO2", "Temperatura T1", "Umidità T1"];
-const cardURL = ["/CO2_current", "/Temp1_current", "/Temp1_current"];
-const cardNumber = 3;
+const cardTitles = ["Percentuale CO2", "Temperatura T1", "Umidità T1", "Temperatura T2", "Umidità T2", "Temperatura T3", "Umidità T3", "Temperatura T4", "Umidità T4"];
+const cardURL = ["/CO2_current", "/Temp1_current", "/Temp1_current","/CO2_current", "/Temp1_current", "/Temp1_current","/CO2_current", "/Temp1_current", "/Temp1_current",];
+const cardNumber = 9;
 const fetchTime = 50;
+ip = "src/test"; //for test purpose
 
 function fetchData() {
     for (let i = 0; i < cardNumber; i++) {
@@ -19,6 +20,7 @@ function IPAlert() {
     } else {
 
         ip = "src/test"; //for test purpose
+
 
     }
 }
